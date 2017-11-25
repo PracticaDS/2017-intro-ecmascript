@@ -1,0 +1,43 @@
+NODEJS
+
+- Hola Mundo:
+ - interpolation
+ - objetos literales
+ - const
+
+- Callbacks: agregar readline
+
+	const readline = require('readline');
+
+	const rl = readline.createInterface({
+	  input: process.stdin,
+	  output: process.stdout
+	});
+
+	rl.question('What do you think of Node.js? ', (answer) => {
+	  console.log(`Thank you for your valuable feedback: ${answer}`);
+	  rl.close();
+	});
+
+- Leer apellido
+- Generalizar leer()
+- Convertir a promises con Promise.all
+- Destructuring de array
+- Reflection + Pipelining de objeto 
+- Destructuring de objeto
+- async + await
+
+BONUS (heavy):
+- pseudo-aplicación parcial con alto orden
+- pipeline reduce: modelar las tareas como pasos de un pipeline. Promise.resolve(), then()
+- refactorizar código
+
+- inmutabilidad 
+
+SAY:
+ - agregar say para hablar 
+ - usar say para preguntar también. (reutilizar decir())
+ - introducir un paso intermedio para repetir lo escrito
+
+ import { exec } from 'child_process';
+ exec(`say "${algo}"`, (error, stdout, stderr) => {
