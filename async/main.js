@@ -1,7 +1,6 @@
 const readline = require('readline')
 import { exec } from 'child_process'
 
-
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
