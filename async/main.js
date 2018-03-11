@@ -1,5 +1,5 @@
-const readline = require('readline');
-import { exec } from 'child_process';
+const readline = require('readline')
+import { exec } from 'child_process'
 
 
 const rl = readline.createInterface({
@@ -9,44 +9,39 @@ const rl = readline.createInterface({
 
 
 const leer = (pregunta, atributo) => async objeto => {
-  const leido = await decir(pregunta);
+  const leido = await decir(pregunta)
   
   return new Promise((resolve, reject) => {  
-    rl.question('?', leido => {
+    rl.question(`${pregunta}`, leido => {
       objeto[atributo] = leido
       resolve({
         ...objeto,
-        atributo: leido
+        [atributo]: leido
       })
     })
   })
 }
 
-const pipe = (...pasos) => inicial => {
-  const p = Promise.resolve(inicial)
-  return pasos.reduce((acc, paso) => {
-    return acc.then(r => paso(r))
-  }, p)
-}
+const pipe = (...pasos) => inicial => 
+  pasos.reduce((acc, paso) => acc.then(paso), Promise.resolve(inicial))
 
-const decir = algo => {
-  return new Promise((resolve, reject) => {
-    exec(`say "${algo}"`, (error, stdout, stderr) => {
-      if (error) {
-        reject(error)
-      } else {
-        resolve()
-      }
-    });
+const decir = algo => new Promise((resolve, reject) => {
+  process.stdout.write('>')
+  exec(`say "${algo}"`, (error, stdout, stderr) => {
+    if (error) {
+      reject(error)
+    } else {
+      resolve()
+    }
   })
-}
+})
 
 
 const run = async () => {
 
   const { nombre, apellido, direccion, edad } = await pipe(
     leer('Como te llamas ?', 'nombre'),
-    async persona => {  
+    async persona => {
       await decir(`${persona.nombre} que bien`)
       return persona
     },

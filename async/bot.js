@@ -35,10 +35,12 @@ const run = async () => {
   const p3 = await leer('Y tu apellido ? ', p2, 'apellido')
 
   rl.close()
+
   const algo = `Hola ${p3.nombre} ${p3.apellido}`
+  
   exec(`say "${algo}"`, (error, stdout, stderr) => {
     if (error)
-  });
+  })
 
 }
 
