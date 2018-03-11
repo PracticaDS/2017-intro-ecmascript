@@ -22,10 +22,24 @@ const saludarA = (quienes, saludoFn) => {
   })
 }
 
-const saludarACorta = (quienes, saludoFn) => quienes.map(quien => saludoFn(quien))
+const saludarACorta = (quienes, saludoFn) => 
+  quienes.map(quien => saludoFn(quien))
 
 const saludarAMasCorta = (quienes, saludoFn) => quienes.map(saludoFn)
 
+const crearSaludador = saludo => {
+  return function(aQuien) {
+    return `${saludo} ${aQuien}!`
+  }
+}
+
+
+
+const crearSaludador2 = saludo => {
+  return (aQuien) => `${saludo} ${aQuien}!`
+}
+
+const crearSaludador3 = saludo => aQuien => `${saludo} ${aQuien}!`
 
 // exports 
 
@@ -35,5 +49,6 @@ export default {
   holaAAlguienCorta,
   holaAMuchos,
   saludarA,
-  chauAAlguienCorta
+  chauAAlguienCorta,
+  crearSaludador
 }

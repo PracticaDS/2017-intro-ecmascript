@@ -1,3 +1,4 @@
+
 // factory
 const AutoPrototype = {
   drive () {
@@ -5,6 +6,6 @@ const AutoPrototype = {
   }
 }
 
-function createAuto () {
+function crearAuto() {
   return Object.create(AutoPrototype)
 }

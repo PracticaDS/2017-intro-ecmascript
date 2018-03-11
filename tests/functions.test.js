@@ -22,6 +22,12 @@ describe('Funciones - Saludos', () => {
       expect(functions.saludarA(['Pipo', 'Popi'], functions.chauAAlguienCorta))
         .to.deep.equal(['Chau Pipo', 'Chau Popi'])
     })
+
+    it('crearSaludo retorna una función para saludar', () => {
+      const bonjour = functions.crearSaludador('Bonjour')
+
+      expect(bonjour('Francois')).to.be.equal('Bonjour Francois!')
+    })
     
   })
 
