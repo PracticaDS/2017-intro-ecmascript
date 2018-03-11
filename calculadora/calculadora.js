@@ -30,9 +30,13 @@ const Tipo = {
   operacion: 'operacion'
 }
 
+const operacion = (nombre, fn) => ({ tipo: Tipo.operacion, nombre, fn })
+
 const Boton = groupBy(_ => _.nombre, [
   ...range(0, 10).map(n => ({ tipo: Tipo.numero, nombre: `${n}`, valor: n })),
-  { tipo: Tipo.operacion, nombre: '+', fn: (a, b) => a + b },
+  operacion('+', (a, b) => a + b }),
+  operacion('*', (a, b) => a * b }),
+  operacion('/', (a, b) => a / b }),
 ])
 
 class Calculadora {
