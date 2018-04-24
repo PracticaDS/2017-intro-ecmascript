@@ -8,7 +8,7 @@ const frases = [
     pirata: '¡No hay palabras para describir lo asqueroso que eres!',
     swordmaster: 'Ya no hay técnicas que te puedan salvar.',
     guybrush: 'Sí que las hay, sólo que nunca las has aprendido.'
-  }
+  },
   { 
     pirata: '¡He hablado con simios más educados que tu!',
     swordmaster: ' Ahora entiendo lo que significan basura y estupidez.',
@@ -30,12 +30,13 @@ const frases = [
     guybrush: 'Ya te están fastidiando otra vez las almorranas, ¿Eh?'
   },
   { 
-    pirata: '¡Mi pañuelo limpiará tu sangre!'
-  guybrush: 'Ah, ¿Ya has obtenido ese trabajo de barrendero?'
+    pirata: '¡Mi pañuelo limpiará tu sangre!',
+    guybrush: 'Ah, ¿Ya has obtenido ese trabajo de barrendero?'
+  },
   { 
     pirata: '¡Ha llegado tu HORA, palurdo de ocho patas!',
     swordmaster: 'Hoy te tengo preparada una larga y dura lección.',
-    Guybrush Y yo tengo un SALUDO para ti, ¿Te enteras?
+    guybrush: 'Y yo tengo un SALUDO para ti, ¿Te enteras?'
   },
   { 
     pirata: '¡Una vez tuve un perro más listo que tu!',
@@ -78,3 +79,5 @@ const frases = [
     guybrush: 'Espero que ya hayas aprendido a no tocarte la nariz.'
   },
 ]
+
+export default frases
