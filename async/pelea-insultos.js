@@ -59,8 +59,9 @@ const enfrentar = async estado => {
   
   await decir(elegido.guybrush, vozNuestra)
 
-  console.log(elegido === frase ? 'GANASTE' : 'PERDISTE')
-  
+  // console.log(elegido === frase ? 'GANASTE' : 'PERDISTE')
+  await decir(elegido === frase ? 'Eres bueno!' : 'No puedes conmigo!', vozPirata)
+
   return { ...estado, puntos: puntos + (elegido === frase ? 1 : -1)}
 }
 
